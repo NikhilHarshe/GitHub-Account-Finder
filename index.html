@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="manifest" href="./assets/site.webmanifest">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+    <title>DevDetiectiveN</title>
+    <style>
+        :root {
+
+            --lm-bg-content: #fefefe;
+            --lm-text: #4b6a9b;
+            --lm-text-alt: #2b3442;
+
+            --lm-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+            --lm-shadow-inactive: 0px 16px 30px -10px rgba(0, 0, 0, 0.2);
+            --lm-icon-bg: brightness(100%);
+            /* Btn */
+            --btn: #0079ff;
+            --btn-hover: #60abff;
+            /* dark */
+            --tx-bio: #c6c6d7;
+            --lm-bg: #1E2A47;
+            --bg-dark: #141D2F;
+            --dark-text: #fefefe;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Space Mono", monospace;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            font-size: 13px;
+            color: var(--lm-bg-content);
+            width: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .search-section {
+            box-shadow: var(--lm-shadow);
+        }
+
+        .inputTag {
+            outline: none;
+            background: none;
+            color: var(--dark-text);
+        }
+
+        .inputTag::placeholder {
+            color: var(--dark-text);
+            font-size: large;
+        }
+
+        @media(max-width:768px) {
+            .inputTag::placeholder {
+                margin-left: 0px;
+                font-size: 12px;
+            }
+        }
+
+        .location-container img {
+            width: 19px;
+            height: 20px;
+        }
+
+        .profileLink-contailer img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .twitter-container img {
+            width: 26px;
+            height: 31px;
+        }
+
+        .company-container img {
+            width: 22px;
+            height: 25px;
+        }
+
+        .main {
+            box-shadow: var(--lm-shadow);
+        }
+
+        .page {
+            overflow-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <div
+        class="wrapper lg:w-[730px] md:w-[570px] w-[330px] flex justify-center items-center flex-col md:gap-[34px] gap-[30px] lg:mt-0 md:mt-[5.3rem] mt-20">
+
+        <!-- Headding section -->
+        <div class="heading flex justify-between items-center  relative w-[100%] tracking-tighter">
+            <p class="Htext text-[--dark-text] font-bold text-[1.695rem]">DevDetective</p>
+
+            <button
+                class="lightBtn text-[--lm-bg-content] flex gap-5 absolute right-0 font-bold  uppercase tracking-[1.8px]">
+                <p class="lighttext">Light</p>
+                <img src="./assets/images/sun-icon.svg" alt="">
+            </button>
+            <button
+                class="darkBtn hidden text-[#1e2a47b6]  gap-5 absolute right-0 font-bold  uppercase tracking-[1.8px]">
+                <p>Dark</p>
+                <img src="./assets/images/moon-icon.svg" alt="">
+            </button>
+        </div>
+
+        <!-- Search section -->
+        <form
+            class="search-section w-[100%] bg-[--lm-bg] flex justify-between items-center relative tracking-tighter rounded-[14px] lg:h-[4.4rem] md:h-[4.4rem] h-14">
+            <input type="search" class="inputTag border-none lg:w-[65%] pl-[60px] md:w-[100%] md:text-lg"
+                placeholder="Enter a GitHub username..." searchData required>
+            <img class="absolute left-6" src="./assets/images/search-icon.svg" width="20px" alt="">
+            <p class="error text-[#ff0000] absolute right-36 font-bold text-[1rem] hidden">no search results</p>
+            <button
+                class="bg-[#0079ff] md:w-[7.2rem] w-[5.2rem] md:h-[3.1rem] h-[2.6rem] rounded-lg text-white absolute md:right-[0.6rem] right-[0.4rem]  md:bottom-3 bottom-2 lg:text-base text-[0.901rem] font-bold hover:bg-[#60abff]">Search</button>
+        </form>
+
+        <div class="main bg-[--lm-bg] rounded-[14px] -mt-3 w-[100%]">
+            <!-- user Info -->
+
+            <div class="topMain grid lg:grid-cols-[30.5%,1fr] md:grid-cols-[198px,1fr] grid-cols-[122px,1fr] w-[94%]     lg:pb-0 md:pb-7 pb-5">
+                <div class="userImg relative">
+                    <img class="Image absolute md:left-10 md:top-10 left-6 top-6 rounded-full md:w-[117px] w-[70px]">
+                </div>
+
+                <div
+                    class="first flex flex-col lg:flex-row justify-between lg:pt-10 md:pt-14 pt-7 items-baseline tracking-tighter">
+                    <div class="namediv">
+                        <p class="name md:text-[1.665rem] text-[1rem] font-bold"></p>
+                        <a href="#" target="_blank" GitHubLink
+                            class="text-blue-500 md:text-[1rem] underline      tracking-tight"></a>
+                    </div>
+                    <p class="JoinnigDate md:text-[0.999rem] md:mt-0 mt-2 font-medium text-[--dark-text]"></p>
+                </div>
+            </div>
+
+            <div class="user-Info grid lg:grid-cols-[30.5%,1fr] grid-cols-[0%,1fr] lg:w-[94%] w-[86%] lg:ml-0 ml-10 justify-center items-center">
+                <div class="demo">
+                    <!-- <p>nikhil</p> -->
+                </div>
+                <div class="userData ">
+                    <p class="discription md:text-[0.97rem] leading-6 mt-4 text-[--tx-bio] tracking-[-0.04]">
+                    </p>
+
+                    <div class="fallowInfo flex bg-[--bg-dark] h-24 md:gap-20 gap-8  md:pl-8 pl-8 md:ml-0 ml-[-18px]  md:w-[100%] w-[100%] items-center rounded-xl lg:mt-10 md:mt-8 mt-7">
+                        <div class="repos">
+                            <p class="text-[--dark-text] md:text-[0.8rem] text-[0.7rem] ">Repos</p>
+                            <p class="reposNo md:text-[22px] text-[15px] leading-6 font-[1000] md:ml-0 ml-2 pt-3"></p>
+                        </div>
+                        <div class="followers">
+                            <p class="text-[--dark-text] md:text-[0.8rem] text-[0.7rem] ">Followers</p>
+                            <p class="followNo md:text-[22px] text-[15px] leading-6 font-[1000] md:ml-0 ml-2 pt-3"></p>
+                        </div>
+                        <div class="following">
+                            <p class="text-[--dark-text] md:text-[0.8rem] text-[0.7rem] ">Following</p>
+                            <p class="followingNo md:text-[22px] text-[15px] leading-6 font-[1000] md:ml-0 ml-2 pt-3"></p>
+                        </div>
+                    </div>
+
+                    <!-- General Info -->
+                    <div class="GeneralInfo grid md:grid-cols-2 md:grid-rows-2 grid-cols-1 md:gap-x-15 gap-y-3 lg:mt-9 mt-7 mb-5 md:pl-10 ">
+                        <div class="location-container flex items-center gap-4 text-[--dark-text]">
+                            <img class="locationImg" src="./assets/lightImages/icons8-location-50.png" height="10px"
+                                alt="">
+                            <p class="location text-[0.99rem]"></p>
+                        </div>
+
+                        <div class="profileLink-contailer flex items-center gap-3 text-[--dark-text]">
+                            <img class="pageImg" src="./assets/lightImages/icons8-link-64.png" alt="">
+                            <a href="#" class="page text-[0.99rem] w-[85%] "></a>
+                        </div>
+
+                        <div class="twitter-container flex items-center gap-4 text-[--dark-text]">
+                            <img class="twitterImg" src="./assets/lightImages/icons8-twitter.svg" alt="">
+                            <a href="#" class="twitter text-[0.99rem]"></a>
+                        </div>
+
+                        <div class="company-container flex items-center gap-4 text-[--dark-text]">
+                            <img class="companyImg" src="./assets/lightImages/icons8-company-64.png" alt="">
+                            <p class="company text-[0.99rem]"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
